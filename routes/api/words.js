@@ -9,7 +9,7 @@ const User = require('../../models/User');
 // @route   POST api/words
 // @desc    Create a word
 // @access  Private
-router.post('/', async (req, res) => {
+router.post('/', auth, async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });

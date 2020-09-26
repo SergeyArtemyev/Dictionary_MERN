@@ -1,7 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { logout } from '../../actions/auth';
 
-const Navbar = () => {
+const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
+  const authLinks = (
+    <>
+      <li className='nav-item'>
+        <Link className='nav-link' to='/login' onClick={logout}>
+          Logout <i className='fas fa-sign-out-alt'></i>
+        </Link>
+      </li>
+    </>
+  );
+
+  const guestLinks = (
+    <>
+      <li className='nav-item'>
+        <Link className='nav-link' to='/login'>
+          Login
+        </Link>
+      </li>
+      <li className='nav-item'>
+        <Link className='nav-link' to='/register'>
+          Sign Up
+        </Link>
+      </li>
+    </>
+  );
+
   return (
     <nav className='navbar navbar-expand-lg navbar-light bg-light'>
       <div className='container'>
@@ -21,21 +49,20 @@ const Navbar = () => {
         </button>
         <div className='collapse navbar-collapse' id='navbarNav'>
           <ul className='navbar-nav ml-auto'>
-            <li className='nav-item'>
-              <Link className='nav-link' to='/login'>
-                Login
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link className='nav-link' to='/register'>
-                Sign Up
-              </Link>
-            </li>
+            {!loading && isAuthenticated ? authLinks : guestLinks}
           </ul>
         </div>
       </div>
     </nav>
   );
 };
+Navbar.propTypes = {
+  logout: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+};
 
-export default Navbar;
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+
+export default connect(mapStateToProps, { logout })(Navbar);

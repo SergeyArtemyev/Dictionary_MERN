@@ -24,7 +24,6 @@ const Dictionary = () => {
         },
       };
       const body = JSON.stringify(word);
-      console.log(body);
       const res = await axios.post('/api/words', body, config);
       console.log(res.data);
     } catch (err) {
