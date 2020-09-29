@@ -13,3 +13,5 @@ export const LOG_OUT = 'LOG_OUT';
 export const LOAD_WORDS = 'LOAD_WORDS';
 export const ADD_WORD_SUCCESS = 'ADD_WORD_SUCCESS';
 export const ADD_WORD_FAIL = 'ADD_WORD_FAIL';
+export const DELETE_WORD = 'DELETE_WORD';
+export const WORD_ERROR = 'WORD_ERROR';

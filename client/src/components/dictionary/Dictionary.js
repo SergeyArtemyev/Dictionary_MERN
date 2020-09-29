@@ -1,10 +1,10 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addWord, loadWords } from '../../actions/words';
+import { addWord, loadWords, deleteWord } from '../../actions/words';
 import Words from './Words';
 
-const Dictionary = ({ addWord, loadWords, words: { loading, words } }) => {
+const Dictionary = ({ addWord, loadWords, deleteWord, auth, words: { loading, words } }) => {
   // Load words
   useEffect(() => {
     loadWords();
@@ -23,11 +23,15 @@ const Dictionary = ({ addWord, loadWords, words: { loading, words } }) => {
   const onSubmit = (e) => {
     e.preventDefault();
     addWord(eng, rus);
+    setFromData({
+      eng: '',
+      rus: '',
+    });
   };
 
   return (
     <Fragment>
-      <div className='mb-5'>
+      <div className='my-5'>
         <form onSubmit={(e) => onSubmit(e)}>
           <div className='form-group'>
             <input
@@ -52,7 +56,11 @@ const Dictionary = ({ addWord, loadWords, words: { loading, words } }) => {
           <input className='btn btn-success btn-block' type='submit' value='Add Word' />
         </form>
       </div>
-      <ul className='list-group'>{!loading && <Words words={words} />}</ul>
+      {!loading && (
+        <ul id='words-collection' className='list-group'>
+          <Words words={words} deleteWord={deleteWord} auth={auth} />
+        </ul>
+      )}
     </Fragment>
   );
 };
@@ -60,11 +68,14 @@ const Dictionary = ({ addWord, loadWords, words: { loading, words } }) => {
 Dictionary.propTypes = {
   addWord: PropTypes.func.isRequired,
   loadWords: PropTypes.func.isRequired,
+  deleteWord: PropTypes.func.isRequired,
   words: PropTypes.object.isRequired,
+  auth: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   words: state.words,
+  auth: state.auth,
 });
 
-export default connect(mapStateToProps, { addWord, loadWords })(Dictionary);
+export default connect(mapStateToProps, { addWord, loadWords, deleteWord })(Dictionary);

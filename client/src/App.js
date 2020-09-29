@@ -30,10 +30,7 @@ const App = () => {
           <Navbar />
           <Route exact path='/' component={Landing} />
           <Alert />
-          <section
-            style={{ height: '600px' }}
-            className='d-flex justify-content-center align-items-center'
-          >
+          <section className='container'>
             <Switch>
               <Route exact path='/register' component={Register} />
               <Route exact path='/login' component={Login} />

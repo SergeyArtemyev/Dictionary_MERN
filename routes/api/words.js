@@ -48,7 +48,7 @@ router.post('/', auth, async (req, res) => {
     const word = await newWord.save();
 
     // Save word into user's words array
-    user.words.push(word);
+    user.words.unshift(word);
     user.save();
 
     res.json(word);
@@ -59,3 +59,30 @@ router.post('/', auth, async (req, res) => {
 });
 
 module.exports = router;
+
+// @route   DELETE api/words/:id
+// @desc    Delete a word
+// @access  Private
+router.delete('/:id', auth, async (req, res) => {
+  try {
+    const word = await Word.findById(req.params.id);
+
+    if (!word) {
+      return res.status(404).json({ msg: 'Word nof found' });
+    }
+    // Check user
+    if (word.user.toString() !== req.user.id) {
+      return res.status(401).json({ msg: 'User not authorized' });
+    }
+
+    await word.remove();
+
+    res.json({ msg: 'Word Removed' });
+  } catch (err) {
+    console.error(err.message);
+    if (err.kind === 'ObjectId') {
+      return res.status(404).json({ msg: 'Word not found' });
+    }
+    res.status(500).send('Server Error');
+  }
+});
