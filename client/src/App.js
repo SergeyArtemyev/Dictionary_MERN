@@ -1,11 +1,12 @@
 import React, { Fragment, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Navbar from './components/layout/Navbar';
+// import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import Dictionary from './components/dictionary/Dictionary';
 import Alert from './components/layout/Alert';
+import Skeleton from './components/layout/skeleton/Skeleton';
 import PrivateRoute from './components/routing/PrivateRoute';
 import './App.css';
 // Redux
@@ -27,8 +28,9 @@ const App = () => {
     <Provider store={store}>
       <Router>
         <Fragment>
-          <Navbar />
+          {/* <Navbar /> */}
           <Route exact path='/' component={Landing} />
+          <Route exact path='/skeleton' component={Skeleton} />
           <Alert />
           <section className='container'>
             <Switch>

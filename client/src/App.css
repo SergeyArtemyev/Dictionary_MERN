@@ -1,3 +1,56 @@
+/* Skeleton style */
+#top {
+  background: #999;
+  height: 300px;
+}
+
+#profile {
+  background: #222;
+  color: #fff9f99c;
+  width: 300px;
+  height: 300px;
+  padding: 20px;
+  text-shadow: 0px 0px 1px #b4d0eb;
+}
+#profile img {
+  width: 30%;
+  border-radius: 50%;
+}
+
+#profile .word-amount,
+#profile .user-level {
+  width: 100%;
+}
+#profile .btn-logout {
+  color: #fff9f99c;
+  text-decoration: none;
+  font-size: 18px;
+  text-shadow: 0px 0px 1px #b4d0eb;
+}
+
+#random-game {
+  width: 70%;
+}
+
+#random-game p {
+  font-size: 30px;
+}
+
+#random-game img {
+  width: 200px;
+}
+
+#aside-nav {
+  background: #0000ff;
+  width: 300px;
+  height: 637px;
+}
+
+#aside-nav nav ul li {
+  background: #0000eb;
+  color: #fff;
+}
+
 #register-form {
   width: 400px;
 }
