@@ -1,16 +1,24 @@
+/* UTILS */
+.text-silver {
+  color: #fff9f9;
+  text-shadow: 2px 0px 2px #000;
+}
+
+.text-silver-2 {
+  color: #fff9f9;
+  text-shadow: 2px 0px 2px #333, 0px 1px 2px #333;
+}
+
 /* Skeleton style */
 #top {
-  background: #999;
+  background: linear-gradient(#828282, #ffffff);
   height: 300px;
 }
 
 #profile {
-  background: #222;
-  color: #fff9f99c;
   width: 300px;
   height: 300px;
   padding: 20px;
-  text-shadow: 0px 0px 1px #b4d0eb;
 }
 #profile img {
   width: 30%;
@@ -22,12 +30,13 @@
   width: 100%;
 }
 #profile .btn-logout {
-  color: #fff9f99c;
   text-decoration: none;
-  font-size: 18px;
-  text-shadow: 0px 0px 1px #b4d0eb;
+  font-size: 20px;
 }
-
+#profile .btn-logout:hover {
+  color: #eee;
+}
+/* Random game section */
 #random-game {
   width: 70%;
 }
@@ -36,28 +45,36 @@
   font-size: 30px;
 }
 
-#random-game img {
-  width: 200px;
+#random-game {
+  position: relative;
 }
 
+#random-game .nerd img {
+  width: 160px;
+  position: absolute;
+  top: 2%;
+  left: 25%;
+  z-index: 10000;
+}
+/* Aside-nav */
 #aside-nav {
-  background: #0000ff;
-  width: 300px;
-  height: 637px;
+  background: linear-gradient(to bottom, #ffffff 1%, #828282 95%);
+  height: 100%;
 }
 
 #aside-nav nav ul li {
-  background: #0000eb;
-  color: #fff;
+  background: transparent;
+  color: #000;
 }
 
+/* Dictionary section */
 #register-form {
   width: 400px;
 }
 
 #words-collection {
   width: 50%;
-  height: 500px;
+  height: 200px;
   overflow-y: auto;
 }
 
@@ -68,4 +85,25 @@
 }
 .delete-word:focus {
   outline: 0;
+}
+
+/* carousel */
+.carousel,
+.carousel-item {
+  width: 600px;
+  height: 300px;
+}
+
+.carousel-caption {
+  bottom: 30%;
+}
+#random-game .carousel-caption p {
+  font-size: 16px;
+}
+.carousel-indicators .active {
+  background: #eee;
+}
+.carousel-indicators li {
+  border: 0;
+  box-shadow: 2px 0px 2px #333, 0px 1px 2px #333;
 }
