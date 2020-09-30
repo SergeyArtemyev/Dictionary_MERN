@@ -1,17 +1,23 @@
 /* UTILS */
+body {
+  /* background: linear-gradient(to bottom, #ffffff 300px, #828282 900px); */
+  background: #ececec;
+  height: 100vh;
+}
+
 .text-silver {
-  color: #fff9f9;
+  color: #fbfafd;
   text-shadow: 2px 0px 2px #000;
 }
 
 .text-silver-2 {
-  color: #fff9f9;
+  color: #fbfafd;
   text-shadow: 2px 0px 2px #333, 0px 1px 2px #333;
 }
 
 /* Skeleton style */
 #top {
-  background: linear-gradient(#828282, #ffffff);
+  background: linear-gradient(#828282, #ececec);
   height: 300px;
 }
 
@@ -58,8 +64,9 @@
 }
 /* Aside-nav */
 #aside-nav {
-  background: linear-gradient(to bottom, #ffffff 1%, #828282 95%);
-  height: 100%;
+  position: sticky;
+  top: 40%;
+  margin-top: 10%;
 }
 
 #aside-nav nav ul li {
@@ -72,10 +79,24 @@
   width: 400px;
 }
 
-#words-collection {
-  width: 50%;
-  height: 200px;
+.words-collection {
+  height: 500px;
+  background: #fff;
+  background-image: url('./img/letters3.png');
+  background-repeat: no-repeat;
   overflow-y: auto;
+  background-size: 60%;
+  background-position: bottom;
+}
+
+.words-collection ul li {
+  background: transparent;
+}
+
+.fetch-vocabulary {
+  width: 100%;
+  height: 500px;
+  font-size: 30px;
 }
 
 .delete-word {
