@@ -33,7 +33,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
   return (
     <form id='register-form' onSubmit={(e) => onSubmit(e)}>
-      <h3 className='text-center'>Register form</h3>
+      <h3 className='text-center text-silver-2 mb-4'>FREE REGISTRATION</h3>
       <div className='form-group'>
         <input
           type='text'
@@ -75,7 +75,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
         />
       </div>
       <div className='form-group'>
-        <input className='btn btn-block btn-primary' type='submit' value='Sing Up' />
+        <input className='btn btn-block btn-silver' type='submit' value='Sing Up' />
       </div>
     </form>
   );

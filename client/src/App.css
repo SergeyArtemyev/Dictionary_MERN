@@ -4,6 +4,19 @@ body {
   background: #ececec;
   height: 100vh;
 }
+.btn-silver {
+  border: 0;
+  background-color: #ffffff;
+  background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+  font-weight: bold;
+  color: #ececec;
+  text-shadow: 1px 0 2px #333, 0 1px 2px #333;
+}
+.btn-silver:hover {
+  box-shadow: 2px 1px 4px 1px #b3b3b3, -2px -1px 4px 1px #b3b3b3;
+  color: #333;
+  text-shadow: none;
+}
 
 .text-silver {
   color: #fbfafd;
@@ -13,6 +26,43 @@ body {
 .text-silver-2 {
   color: #fbfafd;
   text-shadow: 2px 0px 2px #333, 0px 1px 2px #333;
+}
+
+/* Showcase */
+#showcase {
+  background-image: url('./img/landing-notes.png');
+  background-repeat: no-repeat;
+  background-size: 60%;
+  height: 100vh;
+}
+
+.label-img {
+  width: 15%;
+}
+
+.auth-form-wrapper {
+  border-radius: 5%;
+  padding: 1.5rem;
+  box-shadow: 4px 2px 5px 3px #c6c6c6, -3px -2px 5px 3px #c6c6c6;
+  background-color: #5b6467;
+  background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
+}
+
+input:not([type='submit']) {
+  background: #d3d3d3;
+  color: #ececec;
+  text-shadow: 1px 0 2px #333, 0 1px 2px #333;
+}
+
+input:not([type='submit']):focus {
+  color: #ececec;
+  text-shadow: 1px 0 2px #333, 0 1px 2px #333;
+  background: inherit;
+}
+
+input:not([type='submit'])::placeholder {
+  color: #ececec;
+  text-shadow: 1px 0 2px #333, 0 1px 2px #333;
 }
 
 /* Skeleton style */

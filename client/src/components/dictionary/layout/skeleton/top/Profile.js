@@ -1,7 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Avatar from '../../../../../img/user.jpg';
+import { logout } from '../../../../../actions/auth';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-const Profile = () => {
+const Profile = ({ logout }) => {
   return (
     <div id='profile' className='d-flex flex-column align-items-center justify-content-center'>
       <img className='mb-2' src={Avatar} alt='user img' />
@@ -12,11 +16,15 @@ const Profile = () => {
       <div className='user-level text-silver d-flex justify-content-between mb-4'>
         Level-------------------------------<span>20</span>
       </div>
-      <a href='#!' className='btn-logout text-silver-2'>
+      <Link to='/' className='btn-logout text-silver-2' onClick={() => logout()}>
         Logout <i className='fas fa-sign-out-alt'></i>
-      </a>
+      </Link>
     </div>
   );
 };
 
-export default Profile;
+Profile.propTypes = {
+  logout: PropTypes.func.isRequired,
+};
+
+export default connect(null, { logout })(Profile);

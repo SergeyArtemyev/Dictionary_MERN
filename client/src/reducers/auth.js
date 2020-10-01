@@ -6,11 +6,13 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOG_OUT,
+  SWITCH_FORM,
 } from '../actions/types';
 
 const initialState = {
   token: localStorage.getItem('token'),
   isAuthenticated: null,
+  isRegistered: false,
   loading: true,
   user: null,
 };
@@ -34,6 +36,11 @@ export default function (state = initialState, action) {
         ...payload,
         isAuthenticated: true,
         loading: false,
+      };
+    case SWITCH_FORM:
+      return {
+        ...state,
+        isRegistered: !state.isRegistered,
       };
     case REGISTER_FAIL:
     case AUTH_ERROR:
