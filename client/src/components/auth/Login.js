@@ -26,7 +26,7 @@ const Login = ({ login, isAuthenticated }) => {
 
   return (
     <form id='register-form' onSubmit={(e) => onSubmit(e)}>
-      <h3 className='text-center'>Sign In</h3>
+      <h3 className='text-center text-silver-2 mb-4'>Sign In</h3>
       <div className='form-group'>
         <input
           type='email'
@@ -50,7 +50,7 @@ const Login = ({ login, isAuthenticated }) => {
         />
       </div>
       <div className='form-group'>
-        <input className='btn btn-block btn-primary' type='submit' value='Login' />
+        <input className='btn btn-block btn-silver' type='submit' value='Login' />
       </div>
     </form>
   );
