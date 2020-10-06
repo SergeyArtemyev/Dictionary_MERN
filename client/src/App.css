@@ -66,16 +66,21 @@ body {
 #showcase {
   background-image: url('./img/landing-notes.png');
   background-repeat: no-repeat;
-  background-size: 60%;
+  background-size: 1100px;
   height: 100%;
+}
+
+#showcase .row {
+  height: 650px;
 }
 
 #showcase h1 {
   margin-left: 5rem;
 }
 
-.label-img {
-  width: 15%;
+#showcase .label-img {
+  width: 150px;
+  margin-bottom: 1rem;
 }
 
 .auth-form-wrapper {
@@ -134,7 +139,13 @@ input:not([type='submit'])::placeholder {
   filter: blur(5px);
 }
 
-#about .col-6 {
+#about .row:nth-child(odd),
+footer {
+  background: #ececec;
+  box-shadow: 0 15px 50px 40px #ececec, 15px 0 50px 40px #ececec;
+}
+
+#about .col-sm-6 {
   height: 600px;
 }
 #about .about-demo,
@@ -152,13 +163,15 @@ input:not([type='submit'])::placeholder {
   height: 300px;
 }
 .about-footer {
-  width: 850px;
+  width: 50%;
   margin: 0 auto;
   padding-bottom: 1rem;
   text-align: center;
 }
-.about-footer img {
+#about .footer-img {
+  display: block;
   width: 200px;
+  margin: 0 auto;
 }
 /* Skeleton style */
 #top {

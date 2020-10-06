@@ -20,11 +20,11 @@ const Landing = ({ isRegistered, switchForm }) => {
     <Fragment>
       <section id='showcase'>
         <div className='row no-gutters'>
-          <div className='col-6'>
+          <div className='col-md-6'>
             <h1 className='heading-silver mt-3'>Dictionary</h1>
           </div>
-          <div className='col-6 d-flex flex-column justify-content-center align-items-center mt-5'>
-            <img className='label-img mb-5' src={NerdLabel} alt='nerd label' />
+          <div className='col-md-6 d-flex flex-column justify-content-center align-items-center'>
+            <img className='label-img' src={NerdLabel} alt='nerd label' />
             <div className='auth-form-wrapper'>
               {!isRegistered ? <Register /> : <Login />}
               {!isRegistered ? (
@@ -58,12 +58,12 @@ const Landing = ({ isRegistered, switchForm }) => {
       <section id='about'>
         <div className='overlay'></div>
         <div className='row no-gutters'>
-          <div className='col-6'>
+          <div className='col-sm-6'>
             <div className='about-demo d-flex align-items-center justify-content-center'>
               <p className='box box-silver-2 text-silver-2'>Learn new words with cards</p>
             </div>
           </div>
-          <div className='col-6'>
+          <div className='col-sm-6'>
             <div className='showcase d-flex align-items-center justify-content-center'>
               <div className='demo mr-5'>Screenshot or gif</div>
               <img src={NerdBook} alt='Nerd with a book' />
@@ -72,13 +72,13 @@ const Landing = ({ isRegistered, switchForm }) => {
         </div>
         {/*  */}
         <div className='row no-gutters'>
-          <div className='col-6'>
+          <div className='col-sm-6'>
             <div className='showcase d-flex align-items-center justify-content-center'>
               <img src={NerdScary} alt='Nerd with a book' />
               <div className='demo ml-5'>Screenshot or gif</div>
             </div>
           </div>
-          <div className='col-6'>
+          <div className='col-sm-6'>
             <div className='about-demo d-flex align-items-center justify-content-center'>
               <p className='box box-silver-2 text-silver-2'>Translate words on speed</p>
             </div>
@@ -86,24 +86,26 @@ const Landing = ({ isRegistered, switchForm }) => {
         </div>
         {/*  */}
         <div className='row no-gutters'>
-          <div className='col-6'>
+          <div className='col-sm-6'>
             <div className='about-demo d-flex align-items-center justify-content-center'>
               <p className='box box-silver-2 text-silver-2'>Practice your listening skills</p>
             </div>
           </div>
-          <div className='col-6'>
+          <div className='col-sm-6'>
             <div className='showcase d-flex align-items-center justify-content-center'>
               <div className='demo mr-5'>Screenshot or gif</div>
               <img src={NerdArms} alt='Nerd with a book' />
             </div>
           </div>
         </div>
-        <div className='about-footer'>
-          <img src={NerdLaying} alt='nerd laying' />
-          <h3 className='box box-silver-2 text-silver'>
-            And many other things that you can do in your own Dictionary
-          </h3>
-        </div>
+        <img className='footer-img' src={NerdLaying} alt='nerd laying' />
+        <footer>
+          <div className='about-footer'>
+            <h3 className='box box-silver-2 text-silver'>
+              And many other things that you can do in your own Dictionary
+            </h3>
+          </div>
+        </footer>
       </section>
     </Fragment>
   );

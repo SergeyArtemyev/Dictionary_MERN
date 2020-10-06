@@ -1,0 +1,142 @@
+@media (max-width: 1537px) {
+  #showcase {
+    background-size: 850px;
+    background-position-y: 30px;
+  }
+
+  #showcase .row {
+    height: 580px;
+  }
+
+  #showcase .label-img {
+    width: 100px;
+    margin: 0.5rem 0;
+  }
+  #showcase .auth-form-wrapper {
+    margin-bottom: 4rem;
+  }
+
+  #showcase .showcase-footer {
+    margin-top: 0;
+  }
+  #showcase .showcase-footer p {
+    font-size: 1.5rem;
+  }
+  #about .about-footer h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  #showcase {
+    background-size: 650px;
+    background-position-y: 110px;
+  }
+
+  #register-form {
+    width: 300px;
+  }
+
+  #about .about-demo p {
+    font-size: 1.5rem;
+  }
+
+  #about .about-footer {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .col-md-6 {
+    flex-direction: column;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  #showcase {
+    background-image: unset;
+  }
+
+  #showcase .row {
+    height: 630px;
+  }
+
+  #showcase h1 {
+    text-align: center;
+    margin: 0 !important;
+    padding: 1rem 0;
+    border-bottom: 1px;
+    border-bottom-color: #ccc;
+    border-bottom-style: solid;
+  }
+
+  #showcase .label-img {
+    width: 100px;
+    margin-bottom: 0.5rem !important;
+  }
+  #showcase .auth-form-wrapper {
+    margin-bottom: 1rem;
+    width: 80%;
+  }
+
+  #register-form {
+    width: 100%;
+  }
+
+  #showcase .showcase-footer {
+    margin: 0;
+  }
+
+  #showcase .showcase-footer p {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .showcase img {
+    width: 100px;
+  }
+
+  #about .row {
+    margin: 2rem 0;
+  }
+
+  #about .row:nth-child(odd) {
+    flex-direction: column-reverse;
+  }
+
+  #about .col-sm-6 {
+    height: 100%;
+  }
+
+  .showcase .demo {
+    width: 200px;
+    height: 200px;
+    margin: 0 1rem !important;
+  }
+
+  #about .about-demo p {
+    font-size: 1rem;
+  }
+
+  #about .footer-img {
+    width: 150px;
+  }
+
+  #about .about-footer h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  #showcase .row {
+    height: 650px;
+  }
+  #showcase .showcase-footer {
+    margin: 0;
+  }
+
+  #showcase .showcase-footer p {
+    width: 100%;
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+}

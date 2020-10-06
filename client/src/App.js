@@ -6,6 +6,7 @@ import Skeleton from './components/dictionary/layout/skeleton/Skeleton';
 import Alert from './components/layout/Alert';
 import PrivateRoute from './components/routing/PrivateRoute';
 import './App.css';
+import './stylesheets/media.css';
 // Redux
 import { Provider } from 'react-redux';
 import store from './store';
