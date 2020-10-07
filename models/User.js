@@ -14,7 +14,6 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  // РАЗОБРАТЬСЯ С АУТЕНТИФИКАЦИЕЙ И КАК ЗАПУШИТЬ СЛОВА В СЛОВАРЬ И ВСЮ АССОЦИАЦИЮ
   words: [
     {
       type: mongoose.Schema.Types.ObjectID,

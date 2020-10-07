@@ -32,8 +32,8 @@ const Dictionary = ({ addWord, loadWords, deleteWord, auth, words: { loading, wo
   return (
     <Fragment>
       <div className='col-3 px-3'>
-        <h2 className='text-center'>Add a word</h2>
-        <form onSubmit={(e) => onSubmit(e)}>
+        <h2 className='heading-silver text-center'>Add a word</h2>
+        <form className='add-word' onSubmit={(e) => onSubmit(e)}>
           <div className='form-group'>
             <input
               type='text'
@@ -54,18 +54,18 @@ const Dictionary = ({ addWord, loadWords, deleteWord, auth, words: { loading, wo
               placeholder='Translation'
             />
           </div>
-          <input className='btn btn-success btn-block' type='submit' value='Add Word' />
+          <input className='btn btn-block btn-silver' type='submit' value='Add Word' />
         </form>
       </div>
       <div className='col-9 px-3'>
-        <h2 className='text-center'>Vocabulary</h2>
+        <h2 className='heading-silver text-center'>Vocabulary</h2>
         <div className='words-collection'>
           {loading ? (
             <div className='fetch-vocabulary d-flex align-items-center justify-content-center'>
               Fetching words from your vocabulary...
             </div>
           ) : (
-            <ul className='list-group'>
+            <ul className='list-group list-group-flush'>
               <Words words={words} deleteWord={deleteWord} auth={auth} />
             </ul>
           )}

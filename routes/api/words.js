@@ -31,10 +31,6 @@ router.get('/', auth, async (req, res) => {
 // @desc    Create a word
 // @access  Private
 router.post('/', auth, async (req, res) => {
-  // const errors = validationResult(req);
-  // if (!errors.isEmpty()) {
-  //   return res.status(400).json({ errors: errors.array() });
-  // }
   const { eng, rus } = req.body;
   try {
     const user = await User.findById(req.user.id).select('-password');
@@ -75,6 +71,7 @@ router.delete('/:id', auth, async (req, res) => {
       return res.status(401).json({ msg: 'User not authorized' });
     }
 
+    await User.updateOne({ _id: req.user.id }, { $pull: { words: word.id.toString() } });
     await word.remove();
 
     res.json({ msg: 'Word Removed' });

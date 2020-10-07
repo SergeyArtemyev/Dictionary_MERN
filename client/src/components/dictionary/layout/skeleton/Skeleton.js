@@ -18,12 +18,13 @@ const Skeleton = () => {
         <div className='col-3'>
           <aside id='aside-nav'>
             <nav>
-              <ul className='list-group'>
-                <li className='list-group-item'>collapsible list items</li>
-                <li className='list-group-item'>collapsible list items</li>
-                <li className='list-group-item'>collapsible list items</li>
-                <li className='list-group-item'>collapsible list items</li>
-                <li className='list-group-item'>collapsible list items</li>
+              <h2 className='heading-silver pl-3 mb-2'>Games and Practice</h2>
+              <ul className='list-group list-group-flush box box-silver-2'>
+                <li className='list-group-item text-silver'>collapsible list items</li>
+                <li className='list-group-item text-silver'>collapsible list items</li>
+                <li className='list-group-item text-silver'>collapsible list items</li>
+                <li className='list-group-item text-silver'>collapsible list items</li>
+                <li className='list-group-item text-silver'>collapsible list items</li>
               </ul>
             </nav>
           </aside>
