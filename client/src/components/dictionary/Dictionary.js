@@ -31,44 +31,46 @@ const Dictionary = ({ addWord, loadWords, deleteWord, auth, words: { loading, wo
 
   return (
     <Fragment>
-      <div className='col-3 px-3'>
-        <h2 className='heading-silver text-center'>Add a word</h2>
-        <form className='add-word' onSubmit={(e) => onSubmit(e)}>
-          <div className='form-group'>
-            <input
-              type='text'
-              className='form-control'
-              name='eng'
-              value={eng}
-              onChange={(e) => onChange(e)}
-              placeholder='English word'
-            />
-          </div>
-          <div className='form-group'>
-            <input
-              type='text'
-              className='form-control'
-              name='rus'
-              onChange={(e) => onChange(e)}
-              value={rus}
-              placeholder='Translation'
-            />
-          </div>
-          <input className='btn btn-block btn-silver' type='submit' value='Add Word' />
-        </form>
-      </div>
-      <div className='col-9 px-3'>
-        <h2 className='heading-silver text-center'>Vocabulary</h2>
-        <div className='words-collection'>
-          {loading ? (
-            <div className='fetch-vocabulary d-flex align-items-center justify-content-center'>
-              Fetching words from your vocabulary...
+      <div data-target='Vocabulary' className='row no-gutters my-5 game game-active'>
+        <div className='col-3 px-3'>
+          <h2 className='heading-silver text-center'>Add a word</h2>
+          <form className='add-word' onSubmit={(e) => onSubmit(e)}>
+            <div className='form-group'>
+              <input
+                type='text'
+                className='form-control'
+                name='eng'
+                value={eng}
+                onChange={(e) => onChange(e)}
+                placeholder='English word'
+              />
             </div>
-          ) : (
-            <ul className='list-group list-group-flush'>
-              <Words words={words} deleteWord={deleteWord} auth={auth} />
-            </ul>
-          )}
+            <div className='form-group'>
+              <input
+                type='text'
+                className='form-control'
+                name='rus'
+                onChange={(e) => onChange(e)}
+                value={rus}
+                placeholder='Translation'
+              />
+            </div>
+            <input className='btn btn-block btn-silver' type='submit' value='Add Word' />
+          </form>
+        </div>
+        <div className='col-9 px-3'>
+          <h2 className='heading-silver text-center'>Vocabulary</h2>
+          <div className='words-collection'>
+            {loading ? (
+              <div className='fetch-vocabulary d-flex align-items-center justify-content-center'>
+                Fetching words from your vocabulary...
+              </div>
+            ) : (
+              <ul className='list-group list-group-flush'>
+                <Words words={words} deleteWord={deleteWord} auth={auth} />
+              </ul>
+            )}
+          </div>
         </div>
       </div>
     </Fragment>
