@@ -4,6 +4,7 @@ import NerdBook from '../../img/nerd-book.png';
 import NerdScary from '../../img/nerd-scary.png';
 import NerdArms from '../../img/nerd-arms.png';
 import NerdLaying from '../../img/nerd-laying.png';
+import memorycards from '../../assets/img/memorycards.gif';
 import Login from '../auth/Login';
 import Register from '../auth/Register';
 import { connect } from 'react-redux';
@@ -20,10 +21,10 @@ const Landing = ({ isRegistered, switchForm }) => {
     <Fragment>
       <section id='showcase'>
         <div className='row no-gutters'>
-          <div className='col-md-6'>
+          <div className='col-sm-6'>
             <h1 className='heading-silver mt-3'>Dictionary</h1>
           </div>
-          <div className='col-md-6 d-flex flex-column justify-content-center align-items-center'>
+          <div className='col-sm-6 d-flex flex-column justify-content-center align-items-center'>
             <img className='label-img' src={NerdLabel} alt='nerd label' />
             <div className='auth-form-wrapper'>
               {!isRegistered ? <Register /> : <Login />}
@@ -65,7 +66,9 @@ const Landing = ({ isRegistered, switchForm }) => {
           </div>
           <div className='col-sm-6'>
             <div className='showcase d-flex align-items-center justify-content-center'>
-              <div className='demo mr-5'>Screenshot or gif</div>
+              <div className='demo box mr-5'>
+                <img className='w-100' src={memorycards} alt='memory cards preview' />
+              </div>
               <img src={NerdBook} alt='Nerd with a book' />
             </div>
           </div>

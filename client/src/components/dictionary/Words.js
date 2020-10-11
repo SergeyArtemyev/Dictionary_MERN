@@ -1,12 +1,9 @@
 import React from 'react';
+import NoWordsFound from './layout/skeleton/NoWordsFound';
 
 const Words = ({ words, deleteWord, auth }) => {
   if (words.length === 0) {
-    return (
-      <div className='fetch-vocabulary d-flex align-items-center justify-content-center'>
-        Sorry, you don't have words in you vocabulary...
-      </div>
-    );
+    return <NoWordsFound />;
   } else {
     return (
       <>

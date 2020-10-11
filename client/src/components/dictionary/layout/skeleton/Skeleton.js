@@ -36,13 +36,13 @@ const Skeleton = () => {
             <nav>
               <h2 className='heading-silver pl-3 mb-2'>Games and Practice</h2>
               <ul className='list-group list-group-flush box box-silver-2'>
-                <li className='list-group-item text-silver'>
-                  <a href='!#' onClick={(e) => changeGame(e)}>
+                <li className='list-group-item'>
+                  <a className='text-silver' href='!#' onClick={(e) => changeGame(e)}>
                     Vocabulary
                   </a>
                 </li>
-                <li className='list-group-item text-silver'>
-                  <a href='!#' onClick={(e) => changeGame(e)}>
+                <li className='list-group-item'>
+                  <a className='text-silver' href='!#' onClick={(e) => changeGame(e)}>
                     Memory Cards
                   </a>
                 </li>

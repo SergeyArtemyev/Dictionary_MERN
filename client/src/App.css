@@ -163,8 +163,7 @@ footer {
 
 .showcase .demo {
   background: #fff;
-  width: 300px;
-  height: 300px;
+  width: 500px;
 }
 .about-footer {
   width: 50%;
@@ -270,7 +269,6 @@ main .game.game-active {
 }
 
 /* main */
-
 main .add-word {
   border-radius: 5%;
   padding: 1.5rem;

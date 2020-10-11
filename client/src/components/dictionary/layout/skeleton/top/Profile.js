@@ -13,11 +13,11 @@ const Profile = ({ logout, auth, words }) => {
         {!auth.loading && auth.user !== null && auth.user.name}
       </div>
       <div className='word-amount text-silver d-flex justify-content-between mb-1'>
-        Words------------------------------
+        Words -----------------------------
         <span>{!auth.loading && words.length}</span>
       </div>
       <div className='user-level text-silver d-flex justify-content-between mb-4'>
-        Level-------------------------------<span>20</span>
+        Level ------------------------------<span>20</span>
       </div>
       <Link to='/' className='btn-logout text-silver-2' onClick={() => logout()}>
         Logout <i className='fas fa-sign-out-alt'></i>
