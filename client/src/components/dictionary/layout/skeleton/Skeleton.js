@@ -3,23 +3,10 @@ import Dictionary from '../../Dictionary';
 import MemoryCards from '../../MemoryCards';
 import Profile from './top/Profile';
 import RandomGame from './top/RandomGame';
+import Hangman from '../../Hangman';
+import changeGame from '../../../../assets/js/change_game'
 
 const Skeleton = () => {
-  // Change game function
-  const changeGame = (e) => {
-    const games = document.querySelectorAll('.game');
-    games.forEach((game) => {
-      if (game.classList.contains('game-active')) {
-        game.classList.remove('game-active');
-      }
-    });
-    games.forEach((game) => {
-      if (e.target.innerHTML === game.getAttribute('data-target')) {
-        game.classList.add('game-active');
-      }
-    });
-    e.preventDefault();
-  };
   return (
     <section id='sckeleton'>
       {/* top */}
@@ -46,7 +33,11 @@ const Skeleton = () => {
                     Memory Cards
                   </a>
                 </li>
-                <li className='list-group-item text-silver'>collapsible list items</li>
+                <li className='list-group-item text-silver'>
+                <a className='text-silver' href='!#' onClick={(e) => changeGame(e)}>
+                    Hangman
+                  </a>
+                </li>
                 <li className='list-group-item text-silver'>collapsible list items</li>
                 <li className='list-group-item text-silver'>collapsible list items</li>
               </ul>
@@ -57,6 +48,7 @@ const Skeleton = () => {
           <main>
             <Dictionary />
             <MemoryCards />
+            <Hangman/>
           </main>
         </div>
       </div>

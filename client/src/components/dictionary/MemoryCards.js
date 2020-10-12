@@ -13,8 +13,8 @@ const MemoryCards = ({ words: { words, loading } }) => {
     <Fragment>
       {!loading && words.length !== 0 ? (
         <>
-          <h2 className='heading-silver text-center mt-5'>Try to guess translation of the word</h2>
-          <div data-target='Memory Cards' className='my-5 game'>
+          <div data-target='Memory Cards' className='my-5 game flex-column'>
+          <h2 className='heading-silver text-center mb-5'>Try to guess translation of the word</h2>
             <div className='main-card-container'>
               <div id='cards-container' className='cards'></div>
               <div className='navigation'>
