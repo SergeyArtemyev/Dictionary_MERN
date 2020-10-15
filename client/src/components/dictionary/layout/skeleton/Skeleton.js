@@ -4,9 +4,21 @@ import MemoryCards from '../../MemoryCards';
 import Profile from './top/Profile';
 import RandomGame from './top/RandomGame';
 import Hangman from '../../Hangman';
-import changeGame from '../../../../assets/js/change_game'
+import SpeedTranslate from '../../SpeedTranslate';
+import changeGame from '../../../../assets/js/change_game';
+import noWordsFound from '../../../../assets/js/noWordsFound';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-const Skeleton = () => {
+const Skeleton = ({words: {words, loading}}) => {
+  const onClick = (e, loading) => {
+    if(words.length === 0){
+      e.preventDefault();
+      noWordsFound();
+    } else {
+      changeGame(e, loading);
+    }
+  }
   return (
     <section id='sckeleton'>
       {/* top */}
@@ -24,21 +36,25 @@ const Skeleton = () => {
               <h2 className='heading-silver pl-3 mb-2'>Games and Practice</h2>
               <ul className='list-group list-group-flush box box-silver-2'>
                 <li className='list-group-item'>
-                  <a className='text-silver' href='!#' onClick={(e) => changeGame(e)}>
+                  <a className='text-silver' href='!#' onClick={(e) => changeGame(e, loading)}>
                     Vocabulary
                   </a>
                 </li>
                 <li className='list-group-item'>
-                  <a className='text-silver' href='!#' onClick={(e) => changeGame(e)}>
+                  <a className='text-silver' href='!#' onClick={(e) =>onClick(e, loading)}>
                     Memory Cards
                   </a>
                 </li>
                 <li className='list-group-item text-silver'>
-                <a className='text-silver' href='!#' onClick={(e) => changeGame(e)}>
+                <a className='text-silver' href='!#' onClick={(e) =>onClick(e, loading)}>
                     Hangman
                   </a>
                 </li>
-                <li className='list-group-item text-silver'>collapsible list items</li>
+                <li className='list-group-item text-silver'>
+                <a className='text-silver' href='!#' onClick={(e) =>onClick(e, loading)}>
+                    Translate on speed
+                  </a>
+                </li>
                 <li className='list-group-item text-silver'>collapsible list items</li>
               </ul>
             </nav>
@@ -49,6 +65,7 @@ const Skeleton = () => {
             <Dictionary />
             <MemoryCards />
             <Hangman/>
+            <SpeedTranslate/>
           </main>
         </div>
       </div>
@@ -56,4 +73,13 @@ const Skeleton = () => {
   );
 };
 
-export default Skeleton;
+Skeleton.propTypes = {
+  words: PropTypes.object.isRequired,
+}
+
+const mapStateToProps = state => ({
+  words: state.words
+})
+
+
+export default connect(mapStateToProps, {})(Skeleton);

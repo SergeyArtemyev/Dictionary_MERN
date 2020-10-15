@@ -268,6 +268,10 @@ main .game.game-active {
 }
 
 /* main */
+main {
+  position: relative;
+}
+
 main .add-word {
   border-radius: 5%;
   padding: 1.5rem;
@@ -410,6 +414,15 @@ main .add-word {
 }
 
 /* Hangman game */
+#hangman > div {
+  background: #fff;
+  width: 600px;
+}
+
+#hangman > div > p {
+  color: #5b6467;
+}
+
 h1 {
   margin: 20px 0 0;
 }
@@ -434,6 +447,7 @@ h1 {
 }
 
 .wrong-letters-container {
+  color: #5b6467;
   position: absolute;
   top: 20px;
   right: 20px;
@@ -459,6 +473,7 @@ h1 {
 }
 
 .letter {
+  color: #5b6467;
   border-bottom: 3px solid #2980b9;
   display: inline-flex;
   font-size: 30px;
@@ -470,8 +485,7 @@ h1 {
 }
 
 .popup-container {
-  position: relative;
-  top: -255px;
+  position: absolute;
   display: none;
   align-items: center;
   justify-content: center;
@@ -500,10 +514,111 @@ h1 {
 }
 
 .notification-container p {
+  color: #fff;
+  font-size: 1rem;
   margin: 0;
 }
 
 .notification-container.show {
-  transform: translateY(-30px);
+  transform: translateY(-25px);
   opacity: 1;
+}
+
+/* SPEED TRANSLATION */
+#speed-translation {
+  position: relative;
+}
+#speed-translation button {
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 5px 15px;
+}
+
+#speed-translation select {
+  font-size: 1rem;
+  width: 200px;
+  padding: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 5px;
+  background-color: #d3d3d3;
+}
+#speed-translation select:focus,
+#speed-translation input:focus {
+  outline: 0;
+}
+
+.settings {
+  color: #5b6467;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+#speed-translation .main-container {
+  background-color: #fff;
+  color: #5b6467;
+  position: relative;
+  text-align: center;
+  padding: 1rem;
+  width: 500px;
+}
+
+#speed-translation .main-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.4rem;
+  padding-bottom: 0.5rem;
+  border-bottom-width: 1px;
+  border-bottom-color: #5b6467;
+  border-bottom-style: solid;
+}
+
+#speed-translation h3 {
+  font-size: 1.3rem;
+}
+
+#speed-translation input {
+  background-color: #555;
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  width: 300px;
+  padding: 12px 20px;
+  margin-top: 10px;
+}
+
+#speed-translation input:focus {
+  background-color: #555;
+}
+
+.score-container,
+.time-container {
+  position: absolute;
+  top: 60px;
+  font-size: 1rem;
+}
+
+.score-container {
+  right: 20px;
+}
+
+.time-container {
+  left: 20px;
+}
+
+.end-game-container {
+  background-color: inherit;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
 }

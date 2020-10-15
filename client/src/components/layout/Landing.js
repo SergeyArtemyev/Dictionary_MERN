@@ -5,6 +5,7 @@ import NerdScary from '../../img/nerd-scary.png';
 import NerdArms from '../../img/nerd-arms.png';
 import NerdLaying from '../../img/nerd-laying.png';
 import memorycards from '../../assets/img/memorycards.gif';
+import hangman from '../../assets/img/hangman.gif';
 import Login from '../auth/Login';
 import Register from '../auth/Register';
 import { connect } from 'react-redux';
@@ -78,12 +79,14 @@ const Landing = ({ isRegistered, switchForm }) => {
           <div className='col-sm-6'>
             <div className='showcase d-flex align-items-center justify-content-center'>
               <img src={NerdScary} alt='Nerd with a book' />
-              <div className='demo ml-5'>Screenshot or gif</div>
+              <div className='demo box ml-5'>
+                <img className='w-100' src={hangman} alt="hangman preview"/>
+              </div>
             </div>
           </div>
           <div className='col-sm-6'>
             <div className='about-demo d-flex align-items-center justify-content-center'>
-              <p className='box box-silver-2 text-silver-2'>Translate words on speed</p>
+              <p className='box box-silver-2 text-silver-2'>Play Hangman game</p>
             </div>
           </div>
         </div>

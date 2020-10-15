@@ -31,7 +31,7 @@ const Dictionary = ({ addWord, loadWords, deleteWord, auth, words: { loading, wo
 
   return (
     <Fragment>
-      <div data-target='Vocabulary' className='row no-gutters my-5 game game-active'>
+      <div data-target='Vocabulary' className='row no-gutters my-5 game  game-active'>
         <div className='col-3 px-3'>
           <h2 className='heading-silver text-center'>Add a word</h2>
           <form className='add-word' onSubmit={(e) => onSubmit(e)}>
