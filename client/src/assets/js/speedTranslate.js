@@ -1,6 +1,17 @@
 // Init word
-let randomWord;
-export const speedTranslate = (wordsArr, reloader, setReloader) => {
+let randomWord = null;
+// Init score
+let score = null;
+ 
+// Init time
+let time = null;
+let timeInterval = null;
+
+// Set difficulty to value in ls
+let difficulty = 
+localStorage.getItem("difficulty") !== null ? localStorage.getItem("difficulty") : "medium";
+
+export const speedTranslate = (wordsArr) => {
   const word = document.getElementById("rusWord"),
   text = document.getElementById("text"),
   scoreEl = document.getElementById("score"),
@@ -9,28 +20,25 @@ export const speedTranslate = (wordsArr, reloader, setReloader) => {
   settingsForm = document.getElementById("settings-form"),
   difficultySelect = document.getElementById("difficulty");
   
+  
   // List of words for game
   const words = wordsArr.map(word => word.word);
-  
-  // Init score
-  let score = 0;
- 
-  // Init time
-  let time = 10;
-  
-  
-  // Set difficulty to value in ls
-  let difficulty =
-    localStorage.getItem("difficulty") !== null ? localStorage.getItem("difficulty") : "medium";
 
+  score = 0;
+  scoreEl.innerHTML = score;
+  time = 10;
+  timeEl.innerHTML = time + 's';
+  
   // Set difficulty select value
   difficultySelect.value =
-    localStorage.getItem("difficulty") !== null ? localStorage.getItem("difficulty") : "medium";
+  localStorage.getItem("difficulty") !== null ? localStorage.getItem("difficulty") : "medium";
+  
   // Focus on text on start
   text.focus();
 
   // Start counting down
-  const timeInterval = setInterval(updateTime, 1000);
+  timeInterval = setInterval(updateTime, 1000);
+  
 
   // Generate random word from array
   function getRandomWord() {
@@ -63,29 +71,10 @@ export const speedTranslate = (wordsArr, reloader, setReloader) => {
 
   // Game over, show end screen
   function gameOver() {
-    endgameEl.innerHTML = `
-      <h1>Time ran out</h1>
-      <p>Your final score is ${score}</p>
-      <button id='reload'>Reload</button>
-    `;
     endgameEl.style.display = "flex";
+    document.getElementById('final-score').innerHTML = score;
   }
   
-  // Reload Game
-  endgameEl.addEventListener('click', reloadGame);
-  // разобраться со временем!!!!!
-  function reloadGame(e){
-    if(e.target === document.getElementById('reload') || e.target === document.getElementById('difficulty')) {
-      setReloader(!reloader);
-      if(endgameEl.style.display === 'flex') {
-        endgameEl.style.display = 'none';
-      }
-      score = 0;
-      scoreEl.innerHTML = 0;      
-    }
-  }
-  
-
   addWordToDom();
 
   // Event listeners
@@ -116,10 +105,14 @@ export const speedTranslate = (wordsArr, reloader, setReloader) => {
 
   // Settings select
   settingsForm.addEventListener("change", (e) => {
+    clearInterval(timeInterval);
+    score = 0;
+    time = 10;
+    scoreEl.innerHTML = score;
+    timeEl.innerHTML = time + "s";   
     difficulty = e.target.value;
     localStorage.setItem("difficulty", difficulty);
   });
-
 }
   
   

@@ -5,6 +5,7 @@ import Profile from './top/Profile';
 import RandomGame from './top/RandomGame';
 import Hangman from '../../Hangman';
 import SpeedTranslate from '../../SpeedTranslate';
+import ListenWrite from '../../ListenWrite';
 import changeGame from '../../../../assets/js/change_game';
 import noWordsFound from '../../../../assets/js/noWordsFound';
 import PropTypes from 'prop-types';
@@ -46,16 +47,20 @@ const Skeleton = ({words: {words, loading}}) => {
                   </a>
                 </li>
                 <li className='list-group-item text-silver'>
-                <a className='text-silver' href='!#' onClick={(e) =>onClick(e, loading)}>
+                  <a className='text-silver' href='!#' onClick={(e) =>onClick(e, loading)}>
                     Hangman
                   </a>
                 </li>
                 <li className='list-group-item text-silver'>
-                <a className='text-silver' href='!#' onClick={(e) =>onClick(e, loading)}>
+                  <a className='text-silver' href='!#' onClick={(e) =>onClick(e, loading)}>
                     Translate on speed
                   </a>
                 </li>
-                <li className='list-group-item text-silver'>collapsible list items</li>
+                <li className='list-group-item text-silver'>
+                  <a className='text-silver' href='!#' onClick={(e) =>onClick(e, loading)}>
+                    Listen and write
+                  </a>
+                </li>
               </ul>
             </nav>
           </aside>
@@ -66,6 +71,7 @@ const Skeleton = ({words: {words, loading}}) => {
             <MemoryCards />
             <Hangman/>
             <SpeedTranslate/>
+            <ListenWrite/>
           </main>
         </div>
       </div>

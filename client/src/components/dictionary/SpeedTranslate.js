@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import {speedTranslate} from '../../assets/js/speedTranslate'
 
 const SpeedTranslate = ({ words: { words, loading } }) => {
-  const [reloader, setReloader] = useState('true');
-
-
   useEffect(()=>{
-    !loading && words.length !== 0 && speedTranslate(words, reloader, setReloader);
-  }, [words, loading, reloader])
-  
+    !loading && words.length !== 0 && speedTranslate(words);
+  }, [words, loading])
+
+  const onClick = () => {
+    speedTranslate(words);
+    document.getElementById("end-game-container").style.display = 'none'
+  }
+   
   return (
     <div id='speed-translation' data-target='Translate on speed' className='game flex-column align-items-center'>
       <h2 className='heading-silver mt-5 mb-3'>Translate on speed</h2>
@@ -19,7 +21,7 @@ const SpeedTranslate = ({ words: { words, loading } }) => {
           <form id="settings-form">
             <div>
               <label htmlFor="difficulty" className='mr-2'>Difficulty</label>
-              <select id="difficulty">
+              <select id="difficulty" onChange={()=>speedTranslate(words)}>
                 <option value="easy">Easy</option>
                 <option value="medium">Medium</option>
                 <option value="hard">Hard</option>
@@ -39,7 +41,11 @@ const SpeedTranslate = ({ words: { words, loading } }) => {
 
           <p className="score-container">Score: <span id="score">0</span></p>
 
-          <div id="end-game-container" className="end-game-container"></div>
+          <div id="end-game-container" className="end-game-container">
+            <h1>Time ran out</h1>
+            <p>Your final score is <span id='final-score'></span></p>
+            <button id='reload' onClick={onClick}>Reload</button>
+          </div>
         </div>
       </div>
     </div>

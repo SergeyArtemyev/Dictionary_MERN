@@ -622,3 +622,12 @@ h1 {
   width: 100%;
   z-index: 100;
 }
+
+/* Listen and Write */
+#listen-write .hidden-eng-word {
+  visibility: hidden;
+}
+
+#listen-write .guees-result {
+  display: none;
+}
