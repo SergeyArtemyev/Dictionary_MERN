@@ -31,7 +31,7 @@ const Dictionary = ({ addWord, loadWords, deleteWord, auth, words: { loading, wo
 
   return (
     <Fragment>
-      <div data-target='Vocabulary' className='row no-gutters my-5 game  game-active'>
+      <div id='vocabulary' data-target='Vocabulary' className='row no-gutters my-5 game  game-active'>
         <div className='col-3 px-3'>
           <h2 className='heading-silver text-center'>Add a word</h2>
           <form className='add-word' onSubmit={(e) => onSubmit(e)}>
@@ -41,6 +41,7 @@ const Dictionary = ({ addWord, loadWords, deleteWord, auth, words: { loading, wo
                 className='form-control'
                 name='eng'
                 value={eng}
+                autoComplete='off'
                 onChange={(e) => onChange(e)}
                 placeholder='English word'
               />
@@ -52,6 +53,7 @@ const Dictionary = ({ addWord, loadWords, deleteWord, auth, words: { loading, wo
                 name='rus'
                 onChange={(e) => onChange(e)}
                 value={rus}
+                autoComplete='off'
                 placeholder='Translation'
               />
             </div>

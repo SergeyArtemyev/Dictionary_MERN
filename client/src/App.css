@@ -1,8 +1,25 @@
 /* UTILS */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #ececec;
   height: 100vh;
 }
+
+.auth-alert {
+  margin: 0.5rem 0;
+  opacity: 0.9;
+  background: transparent;
+  color: #333;
+  text-shadow: unset;
+}
+
+.auth-alert-danger {
+  color: var(--error-color);
+}
+
 .btn-silver {
   border: 0;
   background-color: #ffffff;
@@ -104,11 +121,43 @@ input:not([type='submit']):focus {
   color: #ececec;
   text-shadow: 1px 0 2px #333, 0 1px 2px #333;
   background: inherit;
+  box-shadow: unset;
 }
 
 input:not([type='submit'])::placeholder {
   color: #ececec;
   text-shadow: 1px 0 2px #333, 0 1px 2px #333;
+}
+
+/* FORM VALIDATION */
+#register-form {
+  --success-color: #2ecc71;
+  --error-color: #e74c3c;
+}
+
+#register-form .form-group {
+  position: relative;
+}
+
+#register-form .form-group.success input:not([type='submit']) {
+  border-color: var(--success-color);
+}
+
+#register-form .form-group.error input:not([type='submit']) {
+  border-color: var(--error-color);
+}
+
+#register-form .form-group small {
+  text-shadow: 1px 1px 1px #000, 0px 0px 1px #000;
+  color: var(--error-color);
+  position: absolute;
+  bottom: -1rem;
+  left: 0.9rem;
+  visibility: hidden;
+}
+
+#register-form .form-group.error small {
+  visibility: visible;
 }
 
 .showcase-footer {
@@ -255,6 +304,9 @@ footer {
   background: transparent;
   font-size: 1.5rem;
 }
+#aside-nav nav ul li a:hover {
+  color: #fff;
+}
 
 /* Dictionary section */
 /* Change game */
@@ -278,6 +330,10 @@ main .add-word {
   box-shadow: 4px 2px 5px 3px #c6c6c6, -3px -2px 5px 3px #c6c6c6;
   background-color: #5b6467;
   background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
+}
+
+#vocabulary .fa-volume-up {
+  color: #576574;
 }
 
 .words-collection ul li {
@@ -525,6 +581,12 @@ h1 {
 }
 
 /* SPEED TRANSLATION */
+.start-container {
+  margin-top: 5rem;
+}
+.speed-translate-container {
+  display: none;
+}
 #speed-translation {
   position: relative;
 }
@@ -624,10 +686,45 @@ h1 {
 }
 
 /* Listen and Write */
+#listen-write {
+  color: #5b6467;
+}
+
 #listen-write .hidden-eng-word {
   visibility: hidden;
 }
 
 #listen-write .guees-result {
   display: none;
+}
+
+#listen-write .listen-icon {
+  cursor: pointer;
+  color: #5b6467;
+  transition: all 0.2s ease-in;
+}
+
+#listen-write .listen-icon:hover {
+  transform: scale(1.2);
+}
+
+#listen-write input[type='text'] {
+  padding-left: 1rem;
+  border-radius: 4px;
+  color: #5b6467;
+  text-shadow: none;
+  margin-right: 1rem;
+  border-color: #333;
+}
+
+#listen-write button {
+  color: #5b6467;
+  font-weight: 500;
+  border-radius: 4px;
+  border-color: #333;
+}
+#listen-write button:hover {
+  box-shadow: 0px 0px 4px 1px #b4b2b2;
+  /* transform: translate(1px, 1px); */
+  transform: scale(1.005);
 }

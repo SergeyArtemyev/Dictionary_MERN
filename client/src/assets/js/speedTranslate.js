@@ -105,7 +105,8 @@ export const speedTranslate = (wordsArr) => {
 
   // Settings select
   settingsForm.addEventListener("change", (e) => {
-    clearInterval(timeInterval);
+    clearInterval(timeInterval)
+    endgameEl.style.display = 'none';
     score = 0;
     time = 10;
     scoreEl.innerHTML = score;
@@ -115,4 +116,8 @@ export const speedTranslate = (wordsArr) => {
   });
 }
   
-  
+export const startGame = (words) => {
+  document.querySelector('.start-container').style.display = 'none';
+  document.querySelector('.speed-translate-container').style.display = 'flex';
+  speedTranslate(words);
+}

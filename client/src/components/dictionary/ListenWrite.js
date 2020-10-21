@@ -30,7 +30,7 @@ const ListenWrite = ({words: { words, loading }}) => {
         <div id='listen-write' data-target='Listen and write' className='game flex-column align-items-center'>
           <h2 className='heading-silver mt-5 mb-3'>Listen and Write</h2>
           <div className='d-flex flex-column justify-content-center align-items-center box p-3'>
-            <i className='fas fa-volume-up' onClick={()=> speak()}></i>
+            <i className='fas fa-volume-up pb-3 listen-icon' onClick={()=> speak()}></i>
             <div className="d-flex flex-column w-100 bg-white p-3">
               <p>
                 English: <span className='hidden-eng-word'></span>
@@ -40,14 +40,14 @@ const ListenWrite = ({words: { words, loading }}) => {
               </p>
             </div>
             <div className="guess-container">
-              <h3>Write in English</h3>
+              <h3 className='text-center my-2'>Write in English</h3>
               <form onSubmit={e => onSubmit(e)}>
                 <input type="text" name='eng' className='guess-word' autoComplete='off' onChange={e=> onChange(e)} value={eng}/>
-                <input type="submit" value="Check"/>
+                <button type="submit">Check</button>
               </form>
             </div>
             <div className="guess-result">
-              <h3>Correct!</h3>
+              <h3 className='text-center'>Correct!</h3>
               <button onClick={()=> listenWrite(words)}>Continue</button>
             </div>
           </div>

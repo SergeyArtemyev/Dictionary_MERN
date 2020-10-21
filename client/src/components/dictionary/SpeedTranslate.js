@@ -1,12 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import SpeedTranslateStart from './SpeedTranslateStart'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import {speedTranslate} from '../../assets/js/speedTranslate'
 
 const SpeedTranslate = ({ words: { words, loading } }) => {
-  useEffect(()=>{
-    !loading && words.length !== 0 && speedTranslate(words);
-  }, [words, loading])
 
   const onClick = () => {
     speedTranslate(words);
@@ -16,12 +14,13 @@ const SpeedTranslate = ({ words: { words, loading } }) => {
   return (
     <div id='speed-translation' data-target='Translate on speed' className='game flex-column align-items-center'>
       <h2 className='heading-silver mt-5 mb-3'>Translate on speed</h2>
-      <div className='d-flex flex-column justify-content-center align-items-center box'>
+      {!loading && words.length !== 0 && <SpeedTranslateStart words={words}/>}
+      <div className='flex-column justify-content-center align-items-center box speed-translate-container'>
         <div id="settings" className="settings">
           <form id="settings-form">
             <div>
               <label htmlFor="difficulty" className='mr-2'>Difficulty</label>
-              <select id="difficulty" onChange={()=>speedTranslate(words)}>
+              <select id="difficulty" onChange={()=> speedTranslate(words)}>
                 <option value="easy">Easy</option>
                 <option value="medium">Medium</option>
                 <option value="hard">Hard</option>

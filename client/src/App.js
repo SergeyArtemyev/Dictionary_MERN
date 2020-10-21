@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
 import Skeleton from './components/dictionary/layout/skeleton/Skeleton';
-import Alert from './components/layout/Alert';
 import PrivateRoute from './components/routing/PrivateRoute';
 import './App.css';
 import './stylesheets/media.css';
@@ -28,7 +27,6 @@ const App = () => {
         <Fragment>
           {/* <Navbar /> */}
           <Route exact path='/' component={Landing} />
-          <Alert />
           <section>
             <Switch>
               <PrivateRoute exact path='/dictionary' component={Skeleton} />

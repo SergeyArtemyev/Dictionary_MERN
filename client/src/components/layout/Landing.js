@@ -6,6 +6,7 @@ import NerdArms from '../../img/nerd-arms.png';
 import NerdLaying from '../../img/nerd-laying.png';
 import memorycards from '../../assets/img/memorycards.gif';
 import hangman from '../../assets/img/hangman.gif';
+import onspeed from '../../assets/img/onspeed.gif';
 import Login from '../auth/Login';
 import Register from '../auth/Register';
 import { connect } from 'react-redux';
@@ -94,12 +95,14 @@ const Landing = ({ isRegistered, switchForm }) => {
         <div className='row no-gutters'>
           <div className='col-sm-6'>
             <div className='about-demo d-flex align-items-center justify-content-center'>
-              <p className='box box-silver-2 text-silver-2'>Practice your listening skills</p>
+              <p className='box box-silver-2 text-silver-2'>Translate words on speed</p>
             </div>
           </div>
           <div className='col-sm-6'>
             <div className='showcase d-flex align-items-center justify-content-center'>
-              <div className='demo mr-5'>Screenshot or gif</div>
+              <div className='demo mr-5 box'>
+                <img src={onspeed} className='w-100' alt="translate on speed game gif"/>
+              </div>
               <img src={NerdArms} alt='Nerd with a book' />
             </div>
           </div>

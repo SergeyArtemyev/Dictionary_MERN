@@ -16,9 +16,6 @@ const Profile = ({ logout, auth, words }) => {
         Words -----------------------------
         <span>{!auth.loading && words.length}</span>
       </div>
-      <div className='user-level text-silver d-flex justify-content-between mb-4'>
-        Level ------------------------------<span>20</span>
-      </div>
       <Link to='/' className='btn-logout text-silver-2' onClick={() => logout()}>
         Logout <i className='fas fa-sign-out-alt'></i>
       </Link>

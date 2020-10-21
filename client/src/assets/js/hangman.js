@@ -1,4 +1,5 @@
 let selectedWord = null;
+
 export default function (vWords, loading){
   const hangman = document.querySelector('#hangman');
   const wordEl = document.getElementById("word");
@@ -10,6 +11,7 @@ export default function (vWords, loading){
   const finalMessage = document.getElementById("final-message");
   
   const figureParts = document.querySelectorAll(".figure-part");
+ 
 
   const words = vWords.map(word => word.word);
     
