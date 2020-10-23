@@ -33,7 +33,7 @@ const Skeleton = ({words: {words, loading}}) => {
           <RandomGame />
         </div>
         {/* aside-nav */}
-        <div className='row no-gutters'>
+        <div className='row no-gutters mb-5'>
           <div className='col-xl-3 col-lg-2'>
             <aside id='aside-nav'>
               <nav>
