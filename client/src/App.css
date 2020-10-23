@@ -690,6 +690,11 @@ h1 {
   color: #5b6467;
 }
 
+#listen-write h2 {
+  color: #5b6467;
+  margin-top: 2rem;
+}
+
 #listen-write .hidden-eng-word {
   visibility: hidden;
 }

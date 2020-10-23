@@ -28,7 +28,7 @@ const ListenWrite = ({words: { words, loading }}) => {
     <Fragment>
       {!loading && (
         <div id='listen-write' data-target='Listen and write' className='game flex-column align-items-center'>
-          <h2 className='heading-silver mt-5 mb-3'>Listen and Write</h2>
+          <h2 className='heading-silver mb-3'>Listen and Write</h2>
           <div className='d-flex flex-column justify-content-center align-items-center box p-3'>
             <i className='fas fa-volume-up pb-3 listen-icon' onClick={()=> speak()}></i>
             <div className="d-flex flex-column w-100 bg-white p-3">
