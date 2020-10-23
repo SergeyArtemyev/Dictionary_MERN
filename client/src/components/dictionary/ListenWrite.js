@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 const ListenWrite = ({words: { words, loading }}) => {
   useEffect(()=>{
-    !loading && !words.length !== 0 && listenWrite(words)
+    !loading && words.length !== 0 && listenWrite(words)
   }, [loading, words])
 
   const [formData, setFormData] = useState({

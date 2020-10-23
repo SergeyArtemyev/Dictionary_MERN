@@ -23,28 +23,30 @@ const Landing = ({ isRegistered, switchForm }) => {
     <Fragment>
       <section id='showcase'>
         <div className='row no-gutters'>
-          <div className='col-sm-6'>
+          <div className='col-md-6'>
             <h1 className='heading-silver mt-3'>Dictionary</h1>
           </div>
-          <div className='col-sm-6 d-flex flex-column justify-content-center align-items-center'>
-            <img className='label-img' src={NerdLabel} alt='nerd label' />
-            <div className='auth-form-wrapper'>
-              {!isRegistered ? <Register /> : <Login />}
-              {!isRegistered ? (
-                <p className='mb-0 text-silver'>
-                  Already have an account?{' '}
-                  <a href='!#' className='link-silver' onClick={(e) => onClick(e)}>
-                    Login
-                  </a>
-                </p>
-              ) : (
-                <p className='mb-0 text-silver'>
-                  Don't have an account?{' '}
-                  <a href='!#' className='link-silver' onClick={(e) => onClick(e)}>
-                    Sign Up
-                  </a>
-                </p>
-              )}
+          <div className='col-md-6 d-flex justify-content-center'>
+            <div className='d-flex flex-column align-items-center'>
+              <img className='label-img' src={NerdLabel} alt='nerd label' />
+              <div className='auth-form-wrapper'>
+                {!isRegistered ? <Register /> : <Login />}
+                {!isRegistered ? (
+                  <p className='mb-0 text-silver'>
+                    Already have an account?{' '}
+                    <a href='!#' className='link-silver' onClick={(e) => onClick(e)}>
+                      Login
+                    </a>
+                  </p>
+                ) : (
+                  <p className='mb-0 text-silver'>
+                    Don't have an account?{' '}
+                    <a href='!#' className='link-silver' onClick={(e) => onClick(e)}>
+                      Sign Up
+                    </a>
+                  </p>
+                )}
+              </div>
             </div>
           </div>
         </div>

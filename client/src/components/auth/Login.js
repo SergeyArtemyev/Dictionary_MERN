@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Alert from '../layout/Alert';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -46,7 +47,7 @@ const Login = ({ login, isAuthenticated }) => {
 
   return (
     <form id='register-form' onSubmit={(e) => onSubmit(e)}>
-      <h3 className='text-center text-silver-2 mb-4'>Sign In</h3>
+      <h3 className='text-center text-silver-2 mb-4'>Sign In <Alert/></h3>
       <div className='form-group'>
         <input
           id='email'

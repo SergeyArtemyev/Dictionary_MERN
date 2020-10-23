@@ -81,11 +81,10 @@ export const login = (email, password) => async (dispatch) => {
   } catch (err) {
     // Тут какие-то проблемы
     
-    // const errors = err.response.data.errors;
-    // if (errors) {
-    //   errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));
-    // }
-    console.log(err);
+    const errors = err.response.data.errors;
+    if (errors) {
+      errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));
+    }
     dispatch({
       type: LOGIN_FAIL,
     });

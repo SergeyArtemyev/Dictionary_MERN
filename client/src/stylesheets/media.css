@@ -17,13 +17,20 @@
   }
 
   #showcase .showcase-footer {
-    margin-top: 0;
+    margin: 0 auto 1rem;
+    width: 80%;
   }
   #showcase .showcase-footer p {
     font-size: 1.5rem;
+    width: 100%;
   }
-  #about .about-footer h3 {
-    font-size: 1.5rem;
+
+  #about .about-footer {
+    width: 80%;
+  }
+
+  #random-game .nerd img {
+    left: 17%;
   }
 }
 
@@ -31,6 +38,15 @@
   #showcase {
     background-size: 650px;
     background-position-y: 110px;
+  }
+
+  #showcase .row .col-md-6:nth-of-type(2) {
+    justify-content: flex-end !important;
+    padding-right: 1rem;
+  }
+
+  .showcase > img {
+    display: none;
   }
 
   #register-form {
@@ -44,9 +60,64 @@
   #about .about-footer {
     width: 80%;
   }
+
+  #about .about-footer h3 {
+    font-size: 1.5rem;
+  }
+
+  #about .col-sm-6 {
+    height: 400px;
+  }
+
+  #sckeleton h2 {
+    font-size: 24px;
+  }
+
+  #random-game .nerd img {
+    left: 80%;
+  }
+
+  #aside-nav,
+  #vocabulary {
+    margin-top: 1rem !important;
+  }
+
+  #aside-nav .list-group-item {
+    padding: 6px 12px;
+  }
+
+  #aside-nav ul li a {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 991px) {
+  #top {
+    justify-content: center;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #ccc;
+  }
+
+  #random-game {
+    display: none !important;
+  }
+
+  #aside-nav {
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  #aside-nav ul li a {
+    font-size: 1.2rem;
+  }
 }
 
 @media (max-width: 768px) {
+  #showcase .row .col-md-6:nth-of-type(2) {
+    padding-right: 0;
+  }
+
   .col-md-6 {
     flex-direction: column;
     flex: 0 0 100%;
@@ -84,6 +155,7 @@
 
   #showcase .showcase-footer {
     margin: 0;
+    width: 100%;
   }
 
   #showcase .showcase-footer p {
@@ -97,6 +169,8 @@
 
   #about .row {
     margin: 2rem 0;
+    flex-direction: column;
+    align-items: center;
   }
 
   #about .row:nth-child(odd) {
@@ -108,7 +182,7 @@
   }
 
   .showcase .demo {
-    width: 200px;
+    width: 325px;
     margin: 0 1rem !important;
   }
 
@@ -122,6 +196,10 @@
 
   #about .about-footer h3 {
     font-size: 1rem;
+  }
+
+  .add-word {
+    margin-bottom: 1rem;
   }
 }
 
@@ -137,5 +215,81 @@
     width: 100%;
     font-size: 1rem;
     margin-bottom: 0;
+  }
+
+  .no-words-modal {
+    width: 300px;
+  }
+
+  .no-words-modal.no-words {
+    transform: translate(-50%, 25%);
+  }
+
+  #cards-container.cards {
+    width: 300px;
+  }
+
+  #hangman > div,
+  #hangman .game-container {
+    width: 320px;
+  }
+
+  #wrong-letters {
+    font-size: 1.2rem;
+  }
+
+  #wrong-letters span {
+    font-size: 1rem;
+  }
+
+  #hangman > div > p {
+    font-size: 1rem;
+  }
+
+  .start-container {
+    margin-top: 2rem;
+  }
+
+  #speed-translation .main-container {
+    width: 300px;
+  }
+
+  #speed-translation select {
+    width: 100px;
+  }
+
+  #speed-translation input {
+    width: 90%;
+  }
+
+  #speed-translation input::placeholder {
+    font-size: 1rem;
+  }
+
+  #end-game-container h1 {
+    height: 1rem;
+    position: relative;
+    top: -45px;
+  }
+
+  #end-game-container p {
+    font-size: 1rem;
+  }
+
+  #listen-write > div {
+    width: 350px;
+    margin: 0 auto;
+  }
+
+  #listen-write p {
+    font-size: 1.2rem;
+  }
+  #listen-write form input {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  #listen-write form button {
+    width: 100%;
   }
 }
