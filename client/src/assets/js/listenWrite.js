@@ -26,7 +26,7 @@ export const checkWords = () => {
   const guessWord = document.querySelector('.guess-word');
   const guessContaier = document.querySelector('.guess-container')
   const guessResult = document.querySelector('.guess-result')
-  if(engWord.innerHTML === guessWord.value){
+  if(engWord.innerHTML.toLowerCase() === guessWord.value.toLowerCase()){
     engWord.style.visibility = 'visible';
     guessContaier.style.display = 'none';
     guessResult.style.display = 'block';

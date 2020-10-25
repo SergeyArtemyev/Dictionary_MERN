@@ -83,7 +83,7 @@ export const speedTranslate = (wordsArr) => {
   text.addEventListener("input", (e) => {
     const insertedText = e.target.value;
 
-    if (insertedText === randomWord.eng) {
+    if (insertedText.toLowerCase() === randomWord.eng.toLowerCase()) {
       addWordToDom();
       updateScore();
 

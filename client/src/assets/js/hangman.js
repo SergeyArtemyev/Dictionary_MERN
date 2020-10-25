@@ -1,6 +1,6 @@
 let selectedWord = null;
 
-export default function (vWords, loading){
+export default function (vWords){
   const hangman = document.querySelector('#hangman');
   const wordEl = document.getElementById("word");
   const hangWord = document.querySelector('.hang-word');
@@ -24,7 +24,7 @@ export default function (vWords, loading){
   // Show hidden word
   function displayWord() {
     wordEl.innerHTML = `
-      ${selectedWord.eng
+      ${selectedWord.eng.toLowerCase()
         .split("")
         .map(
           (letter) => `<span class="letter">${correctLetters.includes(letter) ? letter : ""}</span>`
@@ -33,7 +33,7 @@ export default function (vWords, loading){
     `;
     const innerWord = wordEl.innerText.replace(/\n/g, "");
 
-    if (innerWord === selectedWord.eng) {
+    if (innerWord.toLowerCase() === selectedWord.eng.toLowerCase()) {
       finalMessage.innerText = "Correct!";
       popup.style.display = "flex";
     }
@@ -79,8 +79,8 @@ export default function (vWords, loading){
   function checkLetter(e){
     if(hangman.classList.contains('game-active')){
       if (e.keyCode >= 65 && e.keyCode <= 90) {
-        const letter = e.key;
-        if (selectedWord.eng.includes(letter)) {
+        const letter = e.key.toLowerCase();
+        if (selectedWord.eng.toLowerCase().includes(letter)) {
           if (!correctLetters.includes(letter)) {
             correctLetters.push(letter);
 
